@@ -40,7 +40,7 @@ const EditBook = () => {
       }
     };
     fetchBooks();
-  }, []);
+  }, [id]);
 
   // Dynamically Update Book State
   const handleChange = (e: React.SyntheticEvent) => {

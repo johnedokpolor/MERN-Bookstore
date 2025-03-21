@@ -35,7 +35,10 @@ const CreateBook = ({ create }: Props) => {
         return;
       }
       setLoading(true);
-      const response = await axios.post(`http://localhost:1000/books`, book);
+      const response = await axios.post(
+        `https://mern-bookstore-backend-sego.onrender.com/books`,
+        book
+      );
       console.log(response.data);
       enqueueSnackbar("Book Created Successfully", { variant: "success" });
       setTimeout(() => {
@@ -47,6 +50,8 @@ const CreateBook = ({ create }: Props) => {
       enqueueSnackbar("Book Creation Failed, check console for more details", {
         variant: "error",
       });
+      create(false);
+      setLoading(false);
     }
   };
 
