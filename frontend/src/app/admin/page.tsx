@@ -43,7 +43,6 @@ const Admin = () => {
   });
 
   // Fetch Books as Page Loads Up
-
   const fetchBooks = async () => {
     try {
       const response = await axios.get("http://localhost:1000/books");
@@ -75,6 +74,7 @@ const Admin = () => {
             className="h-10 mb-4 px-2 bg-gray-800 flex-1 rounded-lg"
             type="text"
             value={search}
+            placeholder="Search Book"
             onChange={handleSearch}
           />
           <FaPlus

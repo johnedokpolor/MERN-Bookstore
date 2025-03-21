@@ -59,6 +59,7 @@ const Home = () => {
         className="h-10 px-2 bg-gray-800 w-full md:w-1/2 rounded-lg"
         type="text"
         value={search}
+        placeholder="Search Book"
         onChange={handleSearch}
       />
 
