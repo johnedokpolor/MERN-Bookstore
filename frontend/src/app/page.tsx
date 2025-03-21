@@ -47,10 +47,10 @@ const Home = () => {
 
   // Filter Books According to Search Term
   const filteredBooks = books.filter((book: Book) => {
-    return search.toLowerCase() === ""
+    return search === ""
       ? true
-      : book.title.toLowerCase().includes(search) ||
-          book.author.toLowerCase().includes(search) ||
+      : book.title.includes(search) ||
+          book.author.includes(search) ||
           book.publishYear.toString().includes(search);
   });
 
