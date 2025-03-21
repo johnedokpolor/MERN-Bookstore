@@ -32,7 +32,9 @@ const Home = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get("http://localhost:1000/books");
+        const response = await axios.get(
+          "https://mern-bookstore-backend-sego.onrender.com/books"
+        );
         const { data } = response.data;
         setBooks(data);
         setLoading(false);

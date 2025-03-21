@@ -45,7 +45,9 @@ const Admin = () => {
   // Fetch Books as Page Loads Up
   const fetchBooks = async () => {
     try {
-      const response = await axios.get("http://localhost:1000/books");
+      const response = await axios.get(
+        "https://mern-bookstore-backend-sego.onrender.com/books"
+      );
       const { data } = response.data;
       setBooks(data);
       setLoading(false);
@@ -57,7 +59,9 @@ const Admin = () => {
 
   const handleDeleteBook = async (id: number) => {
     try {
-      const response = await axios.delete(`http://localhost:1000/books/${id}`);
+      const response = await axios.delete(
+        `https://mern-bookstore-backend-sego.onrender.com/books/${id}`
+      );
       console.log(response.data);
     } catch (error) {
       console.log(error);

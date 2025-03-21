@@ -20,7 +20,9 @@ const EditBook = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get(`http://localhost:1000/books/${id}`);
+        const response = await axios.get(
+          `https://mern-bookstore-backend-sego.onrender.com/books/${id}`
+        );
         const { data } = response;
         console.log(data);
         setBook((prev) => {
@@ -57,7 +59,7 @@ const EditBook = () => {
       }
       // setLoading(true);
       const response = await axios.put(
-        `http://localhost:1000/books/${id}`,
+        `https://mern-bookstore-backend-sego.onrender.com/books/${id}`,
         book
       );
       console.log(response.data);

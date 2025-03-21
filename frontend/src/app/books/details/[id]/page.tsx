@@ -28,7 +28,9 @@ const BookDetail = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get(`http://localhost:1000/books/${id}`);
+        const response = await axios.get(
+          `https://mern-bookstore-backend-sego.onrender.com/books/${id}`
+        );
         const { data } = response;
         setBook(data);
         setLoading(false);
