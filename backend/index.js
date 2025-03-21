@@ -3,19 +3,10 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import bookRoutes from "./routes/book.js";
 import cors from "cors";
-import path from "path";
 
 const app = express();
 const PORT = process.env.PORT || 1000;
 
-const __dirname = path.resolve();
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(__dirname, "/frontend/.next"));
-  app.get("*", (req, res) => {
-    res.sendFile();
-  });
-}
 // JSON parser Middleware
 app.use(express.json());
 
