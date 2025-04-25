@@ -58,13 +58,13 @@ const Home = () => {
     <div className="flex flex-col items-center gap-5">
       <h1 className="font-bold text-3xl ">Book Store</h1>
       <input
-        className="h-10 px-2 bg-gray-800 w-full md:w-1/2 rounded-lg"
+        className="h-10  px-2 bg-gray-800 w-full md:w-1/2 rounded-lg"
         type="text"
         value={search}
         placeholder="Search Book"
         onChange={handleSearch}
       />
-
+      <p></p>
       {loading ? (
         <Loader />
       ) : (

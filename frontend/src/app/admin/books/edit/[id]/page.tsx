@@ -1,13 +1,15 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Loader from "@/app/components/Loader";
+import { enqueueSnackbar } from "notistack";
 
 // Edit Book Function
 const EditBook = () => {
   const params = useParams();
-  const { id } = params;
+  const router = useRouter();
+  const id = params?.id as string;
   const [loading, setLoading] = useState(false);
   const [book, setBook] = useState({
     title: "",
@@ -63,7 +65,8 @@ const EditBook = () => {
         book
       );
       console.log(response.data);
-      window.location.href = "/admin";
+      enqueueSnackbar("Book Edited Successfully", { variant: "success" });
+      router.push("/admin");
     } catch (error) {
       console.log(error);
     }
